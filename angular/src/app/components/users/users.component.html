@@ -1,0 +1,15 @@
+<div id="Users">
+  <app-navbar></app-navbar>
+  <app-menus></app-menus>
+  <div class="BoxContent">
+    <div class="BoxContentMenu">
+      <span>Add New User</span>
+      <button class="material-icons" [routerLink]="['/user/add']">add_circle_outline</button>
+    </div>
+    <app-list-user></app-list-user>
+  </div>
+  <a *ngIf="allowToLoadMore" class="BoxLoadContent" (click)="loadMoreUsers()">
+    <i class="material-icons">keyboard_arrow_down</i>
+    <span>load more users</span>
+  </a>
+</div>

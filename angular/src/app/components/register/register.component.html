@@ -1,0 +1,46 @@
+<div class="Auth">
+  <h1>REGISTER AS A NEW USER</h1>
+  <div class="AuthBox">
+    <form class="AuthForm" method="POST" action="/register" (ngSubmit)="register()">
+      <app-message></app-message>
+      <div class="Input">
+        <input
+          type="text"
+          name="fullname"
+          placeholder="Full name"
+          [(ngModel)]="user_fullname">
+      </div>
+      <div class="Input">
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          [(ngModel)]="user_email">
+      </div>
+      <div class="Input">
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          [(ngModel)]="user_username">
+      </div>
+      <div class="Input">
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          autocomplete="off"
+          [(ngModel)]="user_password">
+      </div>
+      <div class="AuthAction">
+        <p>have an account ? <a [routerLink]="['/login']">login</a></p>
+        <button type="submit">
+          <i class="material-icons">check_circle</i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="AuthVersion">
+    <app-version></app-version>
+  </div>
+</div>

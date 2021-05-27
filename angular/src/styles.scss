@@ -1,1 +1,163 @@
 /* You can add global styles to this file, and also import other style files */
+@import './palette.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.Auth {
+  display: grid;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  grid-template-columns: repeat(120, 1fr);
+  grid-template-rows: 1fr auto auto;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+.Auth h1 {
+  display: flex;
+  grid-column: 1 / span 120;
+  grid-row: 1;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background: url("/assets/img/background-auth.png") no-repeat;
+  background-size: cover;
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: $textPrimary;
+}
+.AuthBox {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  grid-column: 1 / span 120;
+  grid-row: 2;
+  height: auto;
+  background: $primary;
+  border-top: 0.1rem solid #666666;
+}
+.AuthForm {
+  width: 100%;
+  height: auto;
+  min-height: 20rem;
+}
+.AuthAction {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.AuthAction p {
+  flex-grow: 1;
+  color: $textPrimary;
+}
+.AuthAction p a {
+  text-decoration: none;
+  color: $textPrimary;
+}
+.AuthAction button {
+  width: 3rem;
+  height: 3rem;
+  background: none;
+  color: $textPrimary;
+  border: none;
+  outline: none;
+}
+.AuthAction button i {
+  font-size: 3rem;
+}
+.AuthVersion {
+  display: flex;
+  grid-column: 1 / span 120;
+  grid-row: 3;
+  padding-top: 3rem;
+  justify-content: center;
+  align-items: flex-start;
+  height: 5rem;
+  background: $primary;
+}
+.AuthVersion p {
+  color: $textPrimary;
+}
+
+.Input {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+}
+.Input input {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  flex-grow: 1;
+  height: 3rem;
+  color: $textBackground;
+  border: 0.1rem solid $textBackground;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.BoxContent {
+  width: 100%;
+  height: auto;
+  border: 0.1rem solid $textBackground;
+  border-radius: 0 0 0.85rem 0.85rem;
+}
+.BoxContentMenu {
+  display: flex;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+}
+.BoxContentMenu span {
+  flex-grow: 1;
+  font-size: 0.85rem;
+  color: $textBackground;
+}
+.BoxContentMenu button {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: none;
+  font-size: 1.5rem;
+  color: $textBackground;
+  border: 0;
+  outline: none;
+}
+.BoxLoadContent {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  text-decoration: none;
+}
+.BoxLoadContent i {
+  margin-bottom: 0.25rem;
+  font-size: 1.5rem;
+  color: $textBackground;
+}
+.BoxLoadContent span {
+  font-size: 0.75rem;
+  color: $textBackground;
+}

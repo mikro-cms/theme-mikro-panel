@@ -1,0 +1,114 @@
+@import "../../../palette.scss";
+
+.Users {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.UserItems {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(120, 1fr);
+  grid-template-rows: auto auto;
+  margin-bottom: 2rem;
+}
+.UserItemImage {
+  position: absolute;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 0;
+  bottom: 0;
+  left: 1rem;
+  width: 4rem;
+  height: 4rem;
+  background: $background;
+  border: 0.1rem solid $textPrimary;
+}
+.UserItemName {
+  display: flex;
+  grid-column: 1 / span 120;
+  grid-row: 1;
+  padding-right: 1rem;
+  padding-left: 7rem;
+  justify-content: flex-start;
+  align-items: center;
+  background: $primaryDark;
+
+  p {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 3rem;
+
+    span {
+      padding-top: 0.25rem;
+      padding-right: 0.25rem;
+      padding-bottom: 0.25rem;
+      padding-left: 0.25rem;
+      font-size: 0.85rem;
+      color: $textPrimary;
+    }
+    small {
+      padding-top: 0.25rem;
+      padding-right: 0.25rem;
+      padding-bottom: 0.25rem;
+      padding-left: 0.25rem;
+      font-size: 0.5rem;
+      color: $textPrimary;
+    }
+  }
+  a {
+    text-decoration: none;
+
+    i {
+      font-size: 1.5rem;
+      color: $textPrimary;
+    }
+  }
+}
+
+.UserItemStatus {
+  display: flex;
+  grid-column: 1 / span 120;
+  grid-row: 2;
+  padding-right: 1rem;
+  padding-left: 7rem;
+  justify-content: flex-start;
+  align-items: center;
+  background: $surface;
+
+  p {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 3rem;
+
+    span {
+      padding-top: 0.25rem;
+      padding-right: 0.25rem;
+      padding-bottom: 0.25rem;
+      padding-left: 0.25rem;
+      font-size: 0.85rem;
+      color: $textSurface;
+    }
+    small {
+      padding-top: 0.25rem;
+      padding-right: 0.25rem;
+      padding-bottom: 0.25rem;
+      padding-left: 0.25rem;
+      font-size: 0.5rem;
+      color: $textPrimary;
+    }
+  }
+  a {
+    text-decoration: none;
+
+    i {
+      font-size: 1rem;
+      color: $textSurface;
+    }
+  }
+}

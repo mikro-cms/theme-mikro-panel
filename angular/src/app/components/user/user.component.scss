@@ -1,0 +1,38 @@
+@import '../../../palette.scss';
+
+.UserBox {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  background: $background;
+}
+.UserForm {
+  width: 100%;
+}
+.UserAction {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.UserAction p {
+  flex-grow: 1;
+  color: $textBackground;
+}
+.UserAction p a {
+  text-decoration: none;
+  color: $textBackground;
+}
+.UserAction button {
+  width: 3rem;
+  height: 3rem;
+  background: none;
+  color: $textBackground;
+  border: none;
+  outline: none;
+}
+.UserAction button i {
+  font-size: 3rem;
+}

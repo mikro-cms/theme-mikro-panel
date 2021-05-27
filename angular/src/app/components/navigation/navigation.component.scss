@@ -1,0 +1,22 @@
+@import '../../../palette.scss';
+
+.Navigation {
+  display: flex;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  height: 4.5rem;
+  background: $primary;
+}
+.NavigationBack {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: $textPrimary;
+  text-decoration: none;
+}
+.NavigationTitle {
+  font-size: 1rem;
+  font-weight: normal;
+  color: $textPrimary;
+}

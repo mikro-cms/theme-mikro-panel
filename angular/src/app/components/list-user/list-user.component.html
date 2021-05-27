@@ -1,0 +1,26 @@
+<div class="Users">
+  <div *ngFor="let user of (users$ | async); let userIndex = index;" class="UserItems">
+    <img class="UserItemImage" [src]="'/assets/users/' + user.user_username + '.png'">
+    <div class="UserItemName">
+      <p>
+        <span>{{ user.user_fullname }}</span>
+        <small>({{ user.role_name | uppercase }})</small>
+      </p>
+      <a (click)="deleteUser(userIndex, user.user_id)">
+        <i class="material-icons">{{ user.deleted_at ? 'toggle_off' : 'toggle_on' }}</i>
+      </a>
+    </div>
+    <div class="UserItemStatus">
+      <p>
+        <span
+          [appMoment]="user.last_login || 0"
+          prefix="last login"
+          invalid="never login">
+        </span>
+      </p>
+      <a [routerLink]="['/user/edit', userIndex]">
+        <i class="material-icons">settings</i>
+      </a>
+    </div>
+  </div>
+</div>

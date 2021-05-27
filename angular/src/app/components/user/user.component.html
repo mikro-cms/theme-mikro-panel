@@ -1,0 +1,41 @@
+<app-navigation [title]="title" backlink="/users"></app-navigation>
+<div class="UserBox">
+  <form class="UserForm" method="POST" action="/user" (ngSubmit)="saveUser()">
+    <app-message></app-message>
+    <div class="Input">
+      <input
+        type="text"
+        name="fullname"
+        placeholder="Full name"
+        [(ngModel)]="user_fullname">
+    </div>
+    <div class="Input">
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        [(ngModel)]="user_email">
+    </div>
+    <div class="Input">
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        [(ngModel)]="user_username">
+    </div>
+    <div class="Input">
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        autocomplete="off"
+        [(ngModel)]="user_password">
+    </div>
+    <div class="UserAction">
+      <p></p>
+      <button type="submit">
+        <i class="material-icons">check_circle</i>
+      </button>
+    </div>
+  </form>
+</div>

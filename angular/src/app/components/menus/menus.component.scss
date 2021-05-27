@@ -1,0 +1,31 @@
+@import "../../../palette.scss";
+
+.Menus {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 6rem;
+  background: url('/assets/img/background-menus.png') no-repeat $background;
+  background-size: 100% 6rem;
+}
+.Menus a {
+  display: flex;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+}
+.Menus a i {
+  font-size: 2.25rem;
+  color: $textPrimary;
+}
+.Menus a span {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: $textPrimary;
+}

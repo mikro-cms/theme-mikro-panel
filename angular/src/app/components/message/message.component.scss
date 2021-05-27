@@ -1,0 +1,16 @@
+@import '../../../palette.scss';
+
+.Message {
+  width: 100%;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  background: $secondary;
+  color: $textSecondary;
+  font-size: 0.85rem;
+  border-radius: 0.25rem;
+}
+.Error {
+  background: $error;
+}
