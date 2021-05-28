@@ -34,7 +34,7 @@ export class UserGuard implements CanActivate {
     this.store.dispatch(authActions.hasBeenLogin());
 
     return this.authService.checkUser().pipe(
-      map(response => {console.log(response);
+      map(response => {
         this.store.dispatch(authActions.hasBeenLoginSuccess({
           user: response.user,
           message: response.message
