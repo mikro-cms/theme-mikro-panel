@@ -1,6 +1,6 @@
 <div class="Users">
   <div *ngFor="let user of (users$ | async); let userIndex = index;" class="UserItems">
-    <img class="UserItemImage" [src]="'/assets/users/' + user.user_username + '.png'">
+    <img class="UserItemImage" [src]="'assets/users/' + user.user_username + '.png'">
     <div class="UserItemName">
       <p>
         <span>{{ user.user_fullname }}</span>
