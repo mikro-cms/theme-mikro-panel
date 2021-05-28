@@ -22,7 +22,8 @@
   left: 1rem;
   width: 4rem;
   height: 4rem;
-  background: $background;
+  background: url('../../../assets/img/user.png') no-repeat $background;
+  background-size: cover;
   border: 0.1rem solid $textPrimary;
 }
 .UserItemName {
