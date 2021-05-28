@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
@@ -70,6 +71,10 @@ import { MomentDirective } from './directives/moment/moment.directive';
     AppRoutingModule
   ],
   providers: [
+    {
+      provide: APP_BASE_HREF,
+      useValue: '/admin'
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CustomHttp,
