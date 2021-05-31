@@ -31,6 +31,8 @@ export class UserGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    if (this.isLoggedIn) return true;
+
     this.store.dispatch(authActions.hasBeenLogin());
 
     return this.authService.checkUser().pipe(
