@@ -56,7 +56,7 @@ const exceptionReducer = createReducer(
     (state, action) => ({
       ...state,
       message: {
-        state: true,
+        state: action.message ? true : false,
         message: action.message
       }
     })
