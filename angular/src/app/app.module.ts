@@ -16,6 +16,16 @@ import * as usersReducer from '@state/users.reducer';
 import { UsersEffects } from '@state/users.effects';
 import * as userReducer from '@state/user.reducer';
 import { UserEffects } from '@state/user.effects';
+import * as apisReducer from '@state/apis.reducer';
+import { ApisEffects } from '@state/apis.effects';
+import * as apiReducer from '@state/api.reducer';
+import { ApiEffects } from '@state/api.effects';
+import * as resourcesReducer from '@state/resources.reducer';
+import { ResourcesEffects } from '@state/resources.effects';
+import * as resourceReducer from '@state/resource.reducer';
+import { ResourceEffects } from '@state/resource.effects';
+import * as rolesReducer from '@state/roles.reducer';
+import { RolesEffects } from '@state/roles.effects';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +40,12 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { MenusComponent } from './components/menus/menus.component';
 import { ListUserComponent } from './components/list-user/list-user.component';
 import { UserComponent } from './components/user/user.component';
+import { ApisComponent } from './components/apis/apis.component';
+import { ListApiComponent } from './components/list-api/list-api.component';
+import { ApiComponent } from './components/api/api.component';
+import { ListResourceComponent } from './components/list-resource/list-resource.component';
+import { ResourceComponent } from './components/resource/resource.component';
+import { SelectRolesComponent } from './components/select-roles/select-roles.component';
 
 import { MomentDirective } from './directives/moment/moment.directive';
 
@@ -47,7 +63,13 @@ import { MomentDirective } from './directives/moment/moment.directive';
     UserComponent,
     NavigationComponent,
     MessageComponent,
-    VersionComponent
+    VersionComponent,
+    ApisComponent,
+    ListApiComponent,
+    ApiComponent,
+    ListResourceComponent,
+    ResourceComponent,
+    SelectRolesComponent
   ],
   imports: [
     BrowserModule,
@@ -56,12 +78,22 @@ import { MomentDirective } from './directives/moment/moment.directive';
       loading: exceptionReducer.reducer,
       auth: authReducer.reducer,
       users: usersReducer.reducer,
-      user: userReducer.reducer
+      user: userReducer.reducer,
+      apis: apisReducer.reducer,
+      api: apiReducer.reducer,
+      resources: resourcesReducer.reducer,
+      resource: resourceReducer.reducer,
+      roles: rolesReducer.reducer
     }),
     EffectsModule.forRoot([
       AuthEffects,
       UsersEffects,
-      UserEffects
+      UserEffects,
+      ApisEffects,
+      ApiEffects,
+      ResourcesEffects,
+      ResourceEffects,
+      RolesEffects
     ]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

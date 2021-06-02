@@ -7,6 +7,9 @@ import { RegisterComponent } from '@components/register/register.component';
 import { LoginComponent } from '@components/login/login.component';
 import { UsersComponent } from '@components/users/users.component';
 import { UserComponent } from '@components/user/user.component';
+import { ApisComponent } from '@components/apis/apis.component';
+import { ApiComponent } from '@components/api/api.component';
+import { ResourceComponent } from '@components/resource/resource.component';
 
 const routes: Routes = [
   {
@@ -38,6 +41,21 @@ const routes: Routes = [
     data: {
       type: 'edit'
     },
+    canActivate: [UserGuard]
+  },
+  {
+    path: 'apis',
+    component: ApisComponent,
+    canActivate: [UserGuard]
+  },
+  {
+    path: 'api/:apiId',
+    component: ApiComponent,
+    canActivate: [UserGuard]
+  },
+  {
+    path: 'resource/:resourceIndex/:apiId/:resourceId',
+    component: ResourceComponent,
     canActivate: [UserGuard]
   }
 ];

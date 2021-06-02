@@ -16,7 +16,7 @@ export class ListUserComponent implements OnInit {
     allowToLoad: true,
     offset: 0,
     length: 10
-  }
+  };
 
   constructor(
     private store: Store

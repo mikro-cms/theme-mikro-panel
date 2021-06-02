@@ -1,0 +1,23 @@
+<div id="Api">
+  <app-navigation title="Api Resource" backlink="/apis"></app-navigation>
+  <div class="Content">
+    <div class="Info">
+      <p class="InfoTitle">{{ api_name }}</p>
+      <div class="InfoDetail">
+        <p>
+          <i class="material-icons">account_circle</i>
+          <span>{{ api_author }}</span>
+        </p>
+        <p>
+          <i class="material-icons">bookmark</i>
+          <span>{{ api_version }}</span>
+        </p>
+        <p>
+          <i class="material-icons">link</i>
+          <span>{{ api_url }}</span>
+        </p>
+      </div>
+    </div>
+    <app-list-resource [apiId]="this.apiId"></app-list-resource>
+  </div>
+</div>

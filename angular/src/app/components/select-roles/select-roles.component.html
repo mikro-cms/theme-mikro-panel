@@ -1,0 +1,11 @@
+<div class="Select">
+  <select name="role_id" (change)="changeRoleId(selectRole.value)" #selectRole>
+    <option
+      [selected]="roleId === null"
+      value="none">none</option>
+    <option
+      *ngFor="let role of (roles$ | async); let roleIndex = index;"
+      [selected]="role.role_id === roleId"
+      [value]="role.role_id">{{ role.role_name }}</option>
+  </select>
+</div>

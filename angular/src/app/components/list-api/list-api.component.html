@@ -1,0 +1,8 @@
+<div class="List">
+  <div *ngFor="let api of (apis$ | async); let apiIndex = index;" class="ListItem">
+    <p>{{ api.api_name }}</p>
+    <a [routerLink]="['/api', api.api_id]">
+      <i class="material-icons">chevron_right</i>
+    </a>
+  </div>
+</div>

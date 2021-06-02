@@ -111,6 +111,26 @@
   border-radius: 0.25rem;
   outline: none;
 }
+.Select {
+  display: flex;
+  margin-top: 1rem;
+  width: 100%;
+
+  select {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    flex-grow: 1;
+    height: 3rem;
+    color: $textBackground;
+    border: 0.1rem solid $textBackground;
+    border-radius: 0.25rem;
+    outline: none;
+
+    option {
+      font-size: 0.75rem;
+    }
+  }
+}
 
 .BoxContent {
   width: 100%;
@@ -160,4 +180,139 @@
 .BoxLoadContent span {
   font-size: 0.75rem;
   color: $textBackground;
+}
+
+.Content {
+  overflow: hidden;
+  width: 100%;
+  background: $background;
+  border: 0.1rem solid $primary;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.Action {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  button {
+    background: none;
+    border: 0;
+    outline: none;
+
+    i {
+      font-size: 2rem;
+      color: $primary;
+    }
+  }
+}
+
+.LoadMore {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: none;
+  font-size: 1rem;
+  color: $primary;
+  border: none;
+  outline: none;
+
+  i {
+    font-size: 1.5rem;
+    color: $textBackground;
+  }
+  span {
+    font-size: 0.85rem;
+    color: $textBackground;
+  }
+}
+
+.Info {
+  width: 100%;
+}
+.InfoTitle {
+  width: 100%;
+  font-size: 1rem;
+  color: $textBackground;
+}
+.InfoDetail {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+
+  p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  p i {
+    font-size: 1rem;
+    color: $textBackground;
+  }
+  p span {
+    padding-right: 0.5rem;
+    padding-left: 0.1rem;
+    font-size: 0.5rem;
+    color: $textBackground;
+  }
+}
+
+.Resources {
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+  width: 100%;
+}
+.ResourceItem {
+  display: flex;
+  margin-bottom: 1rem;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 0.1rem solid $textBackground;
+
+  b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: $primary;
+    font-size: 0.5rem;
+    font-weight: normal;
+    color: $textPrimary;
+  }
+  span {
+    display: flex;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    flex-grow: 1;
+    align-items: center;
+    font-size: 0.9rem;
+    color: $textBackground;
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    text-decoration: none;
+
+    i {
+      font-size: 1rem;
+      color: $textBackground;
+    }
+  }
 }

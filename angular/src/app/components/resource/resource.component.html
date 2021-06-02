@@ -1,0 +1,25 @@
+<div id="Resource">
+  <app-navigation title="Edit Resource Permission" [backlink]="'/api/' + apiId"></app-navigation>
+  <div class="Content">
+    <div class="ResourceItem">
+      <b>{{ api_method }}</b>
+      <span>{{ api_resource }}</span>
+    </div>
+    <form class="Form" method="POST" action="/register" (submit)="editResource()">
+      <app-message></app-message>
+      <app-select-roles [roleId]="role_id" (selectedRoleId)="selectedRoleId($event)"></app-select-roles>
+      <div class="Input">
+        <input
+          type="text"
+          name="role_group"
+          placeholder="Role group"
+          [(ngModel)]="role_group" />
+      </div>
+      <div class="Action">
+        <button type="submit">
+          <i class="material-icons">check_circle</i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

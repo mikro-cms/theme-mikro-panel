@@ -1,0 +1,9 @@
+<div class="Resources">
+  <div *ngFor="let resource of (resources$ | async); let resourceIndex = index;" class="ResourceItem">
+    <b>{{ resource.api_method | uppercase}}</b>
+    <span>{{ resource.api_resource }}</span>
+    <a [routerLink]="['/resource', resourceIndex, apiId, resource.resource_id]">
+      <i class="material-icons">edit</i>
+    </a>
+  </div>
+</div>
