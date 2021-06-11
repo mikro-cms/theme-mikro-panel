@@ -1,0 +1,17 @@
+<div id="Pages">
+  <app-navbar></app-navbar>
+  <app-menus></app-menus>
+  <div class="Content">
+    <div class="ContentMenu">
+      <span>Add New Page</span>
+      <button>
+        <i class="material-icons">add_circle</i>
+      </button>
+    </div>
+    <app-list-page></app-list-page>
+  </div>
+  <a *ngIf="allowToLoadMore" class="LoadMore" (click)="loadMorePages()">
+    <i class="material-icons">keyboard_arrow_down</i>
+    <span>load more pages</span>
+  </a>
+</div>

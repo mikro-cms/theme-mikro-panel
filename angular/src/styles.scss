@@ -189,6 +189,31 @@
   border: 0.1rem solid $primary;
   border-radius: 0 0 1rem 1rem;
 }
+.ContentMenu {
+  display: flex;
+  margin-bottom: 3rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background: $primaryLight;
+}
+.ContentMenu span {
+  flex-grow: 1;
+  font-size: 0.85rem;
+  color: $textPrimary;
+}
+.ContentMenu button {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: none;
+  font-size: 1.5rem;
+  color: $textPrimary;
+  border: 0;
+  outline: none;
+}
 
 .Form {
   display: flex;
@@ -315,4 +340,37 @@
       color: $textBackground;
     }
   }
+}
+
+.List {
+  width: 100%;
+  background: $background;
+}
+.ListItem {
+  display: flex;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  justify-self: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 3rem;
+  border-bottom: 0.1rem solid #C0C0C0;
+}
+.ListItem p {
+  flex-grow: 1;
+  font-size: 0.85rem;
+  color: $textBackground;
+}
+.ListItem a {
+  display: flex;
+  margin-left: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 3rem;
+  text-decoration: none;
+}
+.ListItem a i {
+  font-size: 1.5rem;
+  color: $textBackground;
 }

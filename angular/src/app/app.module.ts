@@ -16,6 +16,8 @@ import * as usersReducer from '@state/users.reducer';
 import { UsersEffects } from '@state/users.effects';
 import * as userReducer from '@state/user.reducer';
 import { UserEffects } from '@state/user.effects';
+import * as pagesReducer from '@state/pages.reducer';
+import { PagesEffects } from '@state/pages.effects';
 import * as apisReducer from '@state/apis.reducer';
 import { ApisEffects } from '@state/apis.effects';
 import * as apiReducer from '@state/api.reducer';
@@ -40,8 +42,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { MenusComponent } from './components/menus/menus.component';
 import { ListUserComponent } from './components/list-user/list-user.component';
 import { UserComponent } from './components/user/user.component';
-import { ApisComponent } from './components/apis/apis.component';
+import { ListPageComponent } from './components/list-page/list-page.component';
+import { PagesComponent } from './components/pages/pages.component';
 import { ListApiComponent } from './components/list-api/list-api.component';
+import { ApisComponent } from './components/apis/apis.component';
 import { ApiComponent } from './components/api/api.component';
 import { ListResourceComponent } from './components/list-resource/list-resource.component';
 import { ResourceComponent } from './components/resource/resource.component';
@@ -69,7 +73,9 @@ import { MomentDirective } from './directives/moment/moment.directive';
     ApiComponent,
     ListResourceComponent,
     ResourceComponent,
-    SelectRolesComponent
+    SelectRolesComponent,
+    PagesComponent,
+    ListPageComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +89,8 @@ import { MomentDirective } from './directives/moment/moment.directive';
       api: apiReducer.reducer,
       resources: resourcesReducer.reducer,
       resource: resourceReducer.reducer,
-      roles: rolesReducer.reducer
+      roles: rolesReducer.reducer,
+      pages: pagesReducer.reducer
     }),
     EffectsModule.forRoot([
       AuthEffects,
@@ -93,7 +100,8 @@ import { MomentDirective } from './directives/moment/moment.directive';
       ApiEffects,
       ResourcesEffects,
       ResourceEffects,
-      RolesEffects
+      RolesEffects,
+      PagesEffects
     ]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

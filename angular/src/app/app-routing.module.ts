@@ -10,6 +10,7 @@ import { UserComponent } from '@components/user/user.component';
 import { ApisComponent } from '@components/apis/apis.component';
 import { ApiComponent } from '@components/api/api.component';
 import { ResourceComponent } from '@components/resource/resource.component';
+import { PagesComponent } from '@components/pages/pages.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,11 @@ const routes: Routes = [
     data: {
       type: 'edit'
     },
+    canActivate: [UserGuard]
+  },
+  {
+    path: 'pages',
+    component: PagesComponent,
     canActivate: [UserGuard]
   },
   {
