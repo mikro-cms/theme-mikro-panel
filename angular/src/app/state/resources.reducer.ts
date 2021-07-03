@@ -98,4 +98,4 @@ export const selectResource = createSelector(
 
     return null;
   }
-)
+);

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as pagesActions from '@state/pages.action';
+import * as pagesActions from '@state/pages.actions';
 import * as pagesReducer from '@state/pages.reducer';
 
 @Component({

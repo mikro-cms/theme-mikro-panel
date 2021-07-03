@@ -1,0 +1,11 @@
+<div class="Select">
+  <select name="theme_id" (change)="changeThemeId(selectTheme.value)" #selectTheme>
+    <option
+      [selected]="themeId === null"
+      value="none">none</option>
+    <option
+      *ngFor="let theme of (themes$ | async); let themeIndex = index;"
+      [selected]="theme.theme_id === themeId"
+      [value]="theme.theme_id">{{ theme.theme_name }}</option>
+  </select>
+</div>

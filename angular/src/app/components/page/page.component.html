@@ -1,0 +1,44 @@
+<div id="Page">
+  <app-navigation [title]="title" backlink="/pages"></app-navigation>
+  <form class="Content" method="POST" action="/page" (ngSubmit)="savePage()">
+    <app-message></app-message>
+    <div class="Input">
+      <input
+        type="text"
+        name="page_url"
+        placeholer="Page url"
+        [(ngModel)]="page_url">
+    </div>
+    <div class="Input">
+      <input
+        type="text"
+        name="page_title"
+        placeholder="Page Title"
+        [(ngModel)]="page_title">
+    </div>
+    <app-select-roles
+      [roleId]="role_id"
+      (selectedRoleId)="selectedRoleId($event)"></app-select-roles>
+    <div class="Input">
+      <input
+        type="text"
+        name="role_group"
+        placeholder="Role group"
+        [(ngModel)]="role_group">
+    </div>
+    <app-select-themes
+      *ngIf="theme_id != ''"
+      [themeId]="theme_id"
+      (selectedThemeId)="selectedThemeId($event)"></app-select-themes>
+    <app-select-variants
+      *ngIf="theme_id != ''"
+      [themeId]="theme_id"
+      [variantName]="variant"
+      (selectedVariantName)="selectedVariantName($event)"></app-select-variants>
+    <div class="Action">
+      <button type="submit">
+        <i class="material-icons">check_circle</i>
+      </button>
+    </div>
+  </form>
+</div>

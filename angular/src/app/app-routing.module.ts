@@ -7,10 +7,11 @@ import { RegisterComponent } from '@components/register/register.component';
 import { LoginComponent } from '@components/login/login.component';
 import { UsersComponent } from '@components/users/users.component';
 import { UserComponent } from '@components/user/user.component';
+import { PagesComponent } from '@components/pages/pages.component';
+import { PageComponent } from '@components/page/page.component';
 import { ApisComponent } from '@components/apis/apis.component';
 import { ApiComponent } from '@components/api/api.component';
 import { ResourceComponent } from '@components/resource/resource.component';
-import { PagesComponent } from '@components/pages/pages.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,22 @@ const routes: Routes = [
   {
     path: 'pages',
     component: PagesComponent,
+    canActivate: [UserGuard]
+  },
+  {
+    path: 'page',
+    component: PageComponent,
+    data: {
+      type: 'add'
+    },
+    canActivate: [UserGuard]
+  },
+  {
+    path: 'page/:pageId',
+    component: PageComponent,
+    data: {
+      type: 'edit'
+    },
     canActivate: [UserGuard]
   },
   {

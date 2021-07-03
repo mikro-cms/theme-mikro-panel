@@ -1,0 +1,11 @@
+<div class="Select">
+  <select name="variant" (change)="variantChange(selectVariant.value)" #selectVariant>
+    <option
+      [selected]="variantName === null"
+      value="none">none</option>
+    <option
+      *ngFor="let variant of (variants$ | async); let variantIndex = index;"
+      [selected]="variantName === variant"
+      [value]="variant">{{ variant }}</option>
+  </select>
+</div>

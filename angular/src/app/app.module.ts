@@ -18,6 +18,8 @@ import * as userReducer from '@state/user.reducer';
 import { UserEffects } from '@state/user.effects';
 import * as pagesReducer from '@state/pages.reducer';
 import { PagesEffects } from '@state/pages.effects';
+import * as PageReducer from '@state/page.reducer';
+import { PageEffects } from '@state/page.effects';
 import * as apisReducer from '@state/apis.reducer';
 import { ApisEffects } from '@state/apis.effects';
 import * as apiReducer from '@state/api.reducer';
@@ -28,6 +30,8 @@ import * as resourceReducer from '@state/resource.reducer';
 import { ResourceEffects } from '@state/resource.effects';
 import * as rolesReducer from '@state/roles.reducer';
 import { RolesEffects } from '@state/roles.effects';
+import * as themesReducer from '@state/themes.reducer';
+import { ThemesEffects } from '@state/themes.effects';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,12 +48,15 @@ import { ListUserComponent } from './components/list-user/list-user.component';
 import { UserComponent } from './components/user/user.component';
 import { ListPageComponent } from './components/list-page/list-page.component';
 import { PagesComponent } from './components/pages/pages.component';
+import { PageComponent } from './components/page/page.component';
 import { ListApiComponent } from './components/list-api/list-api.component';
 import { ApisComponent } from './components/apis/apis.component';
 import { ApiComponent } from './components/api/api.component';
 import { ListResourceComponent } from './components/list-resource/list-resource.component';
 import { ResourceComponent } from './components/resource/resource.component';
 import { SelectRolesComponent } from './components/select-roles/select-roles.component';
+import { SelectThemesComponent } from './components/select-themes/select-themes.component';
+import { SelectVariantsComponent } from './components/select-variants/select-variants.component';
 
 import { MomentDirective } from './directives/moment/moment.directive';
 
@@ -75,7 +82,10 @@ import { MomentDirective } from './directives/moment/moment.directive';
     ResourceComponent,
     SelectRolesComponent,
     PagesComponent,
-    ListPageComponent
+    ListPageComponent,
+    PageComponent,
+    SelectThemesComponent,
+    SelectVariantsComponent
   ],
   imports: [
     BrowserModule,
@@ -85,23 +95,27 @@ import { MomentDirective } from './directives/moment/moment.directive';
       auth: authReducer.reducer,
       users: usersReducer.reducer,
       user: userReducer.reducer,
+      pages: pagesReducer.reducer,
+      page: PageReducer.reducer,
       apis: apisReducer.reducer,
       api: apiReducer.reducer,
       resources: resourcesReducer.reducer,
       resource: resourceReducer.reducer,
       roles: rolesReducer.reducer,
-      pages: pagesReducer.reducer
+      themes: themesReducer.reducer
     }),
     EffectsModule.forRoot([
       AuthEffects,
       UsersEffects,
       UserEffects,
+      PagesEffects,
+      PageEffects,
       ApisEffects,
       ApiEffects,
       ResourcesEffects,
       ResourceEffects,
       RolesEffects,
-      PagesEffects
+      ThemesEffects
     ]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

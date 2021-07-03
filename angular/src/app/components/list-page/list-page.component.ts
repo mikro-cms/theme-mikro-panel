@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Page } from '@models/page.model';
-import * as pagesActions from '@state/pages.action';
+import * as pagesActions from '@state/pages.actions';
 import * as pagesReducer from '@state/pages.reducer';
 
 @Component({

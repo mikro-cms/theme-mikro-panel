@@ -6,7 +6,7 @@ import {
   createSelector
 } from '@ngrx/store';
 import { Page } from '@models/page.model';
-import * as pagesActions from '@state/pages.action';
+import * as pagesActions from '@state/pages.actions';
 
 export interface PagesState {
   pages: Page[],
@@ -75,6 +75,18 @@ const pagesReducer = createReducer(
         total: (state.load.total + action.total)
       }
     })
+  ),
+  on(
+    pagesActions.addNewPage,
+    (state, action) => {
+      const newState = {
+        ...state
+      };
+
+      newState.pages = newState.pages.concat(action.page)
+
+      return newState;
+    }
   )
 );
 
@@ -92,4 +104,17 @@ export const selectPages = createSelector(
 export const selectLoad = createSelector(
   getPagesFeatureState,
   (state: PagesState) => state.load
+);
+
+export const selectPage = createSelector(
+  getPagesFeatureState,
+  (state: PagesState, pageId: any) => {
+    for (var page of state.pages) {
+      if (page.page_id === pageId) {
+        return page;
+      }
+    }
+
+    return null;
+  }
 );

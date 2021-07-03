@@ -1,18 +1,18 @@
 import { Injectable } from "@angular/core";
-import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
+import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { of } from 'rxjs';
 import { exhaustMap, catchError, map, tap } from 'rxjs/operators';
 import { PagesService } from '@services/pages.service';
 import * as exceptionActions from '@state/exception.actions';
-import * as actionsPages from '@state/pages.action';
+import * as pagesActions from '@state/pages.actions';
 
 @Injectable()
 export class PagesEffects {
   public processStart$ = createEffect(() => this.action$.pipe(
     ofType(
-      actionsPages.loadListPages,
-      actionsPages.loadMorePages
+      pagesActions.loadListPages,
+      pagesActions.loadMorePages
     ),
     tap((action) => {
       return this.store.dispatch(exceptionActions.openLoading({ message: action.message }));
@@ -23,10 +23,10 @@ export class PagesEffects {
 
   public processDone$ = createEffect(() => this.action$.pipe(
     ofType(
-      actionsPages.loadListPagesSuccess,
-      actionsPages.loadListPagesFailed,
-      actionsPages.loadMorePagesSuccess,
-      actionsPages.loadMorePagesFailed
+      pagesActions.loadListPagesSuccess,
+      pagesActions.loadListPagesFailed,
+      pagesActions.loadMorePagesSuccess,
+      pagesActions.loadMorePagesFailed
     ),
     tap(() => {
       return this.store.dispatch(exceptionActions.closeLoading());
@@ -36,18 +36,18 @@ export class PagesEffects {
   });
 
   public loadListPages$ = createEffect(() => this.action$.pipe(
-    ofType(actionsPages.loadListPages),
+    ofType(pagesActions.loadListPages),
     exhaustMap(action => this.pagesService.loadListPages(action.offset, action.length).pipe(
-      map(action => actionsPages.loadListPagesSuccess({ pages: action.pages, total: action.total })),
-      catchError(error => of(actionsPages.loadListPagesFailed({ message: error })))
+      map(response => pagesActions.loadListPagesSuccess({ pages: response.pages, total: response.total })),
+      catchError(error => of(pagesActions.loadListPagesFailed({ message: error })))
     ))
   ));
 
   public loadMorePages$ = createEffect(() => this.action$.pipe(
-    ofType(actionsPages.loadMorePages),
+    ofType(pagesActions.loadMorePages),
     exhaustMap(action => this.pagesService.loadListPages(action.offset, action.length).pipe(
-      map(action => actionsPages.loadMorePagesSuccess({ pages: action.pages, total: action.total })),
-      catchError(error => of(actionsPages.loadMorePagesFailed({ message: error })))
+      map(response => pagesActions.loadMorePagesSuccess({ pages: response.pages, total: response.total })),
+      catchError(error => of(pagesActions.loadMorePagesFailed({ message: error })))
     ))
   ));
 
