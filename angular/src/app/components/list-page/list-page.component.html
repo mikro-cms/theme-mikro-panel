@@ -1,7 +1,7 @@
 <div class="List">
   <div *ngFor="let page of (pages$ | async); let pageIndex = index;" class="ListItem">
     <p>{{ page.page_title }}</p>
-    <a [routerLink]="['/customize', page.page_id]">
+    <a *ngIf="page.theme_customize !== null" [routerLink]="['/customize', page.page_id]">
       <i class="material-icons">format_shapes</i>
     </a>
     <a [routerLink]="['/page', page.page_id]">

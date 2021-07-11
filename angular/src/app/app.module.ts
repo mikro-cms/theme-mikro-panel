@@ -49,6 +49,7 @@ import { UserComponent } from './components/user/user.component';
 import { ListPageComponent } from './components/list-page/list-page.component';
 import { PagesComponent } from './components/pages/pages.component';
 import { PageComponent } from './components/page/page.component';
+import { CustomizeComponent } from './components/customize/customize.component';
 import { ListApiComponent } from './components/list-api/list-api.component';
 import { ApisComponent } from './components/apis/apis.component';
 import { ApiComponent } from './components/api/api.component';
@@ -84,6 +85,7 @@ import { MomentDirective } from './directives/moment/moment.directive';
     PagesComponent,
     ListPageComponent,
     PageComponent,
+    CustomizeComponent,
     SelectThemesComponent,
     SelectVariantsComponent
   ],
