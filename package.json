@@ -1,6 +1,6 @@
 {
   "name": "@mikro-cms/theme-mikro-panel",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "mikro-cms theme to manage admin panel",
   "main": "index.js",
   "scripts": {

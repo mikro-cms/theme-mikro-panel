@@ -10,7 +10,8 @@
   <script>
     const ENV = {
       appName: 'mikro-panel',
-      apiUrl: "<%= url('/api/@mikro-cms/api-v1') %>"
+      apiUrl: "<%= url('/api/@mikro-cms/api-v1') %>",
+      pageUrl: "<%= page.page_url.replaceAll('/*', '') %>"
     }
   </script>
 <link rel="stylesheet" href="/public/@mikro-cms/theme-mikro-panel/styles.css"></head>
