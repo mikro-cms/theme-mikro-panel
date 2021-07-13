@@ -61,6 +61,8 @@ import { SelectVariantsComponent } from './components/select-variants/select-var
 
 import { MomentDirective } from './directives/moment/moment.directive';
 
+declare const ENV: any;
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -129,7 +131,7 @@ import { MomentDirective } from './directives/moment/moment.directive';
   providers: [
     {
       provide: APP_BASE_HREF,
-      useValue: '/admin'
+      useValue: ENV.pageUrl
     },
     {
       provide: HTTP_INTERCEPTORS,
