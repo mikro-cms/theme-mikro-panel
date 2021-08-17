@@ -33,8 +33,8 @@ export class UserService {
 
     if (user.user_fullname) editedUser.fullname = user.user_fullname;
     if (user.user_email) editedUser.email = user.user_email;
-    if (user.user_username) editedUser.fullname = user.user_username;
-    if (user.user_password) editedUser.fullname = user.user_password;
+    if (user.user_username) editedUser.username = user.user_username;
+    if (user.user_password) editedUser.password = user.user_password;
 
     return this.http.put<any>(editUserApiUrl, editedUser);
   }
